@@ -1,21 +1,15 @@
 +function ($) {
     var map;
     $.fn.fmiAlpaca.registerPlugin({
-        type: 'my-maps',
+        type: 'dnababan-plugin',
         render: function (self, $element, options) {
-            map = new google.maps.Map(document.getElementById("map"), {
-                center: {
-                    lat: -34.397,
-                    lng: 150.644,
-                },
-                zoom: 8,
-            });
+            $element.append('<input type="text" class="dnababan-text">');
         },
         setData: function (self, $element, options, data) {
-
+$element.find("dnababan-text").val(data);
         },
         getData: function (self, $element, options) {
-
+return $element.find("dnababan-text").val();
         }
     });
 
